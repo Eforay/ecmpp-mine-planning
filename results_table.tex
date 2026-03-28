@@ -1,0 +1,26 @@
+
+\begin{table}[htbp]
+\centering
+\caption{Comparison of Z3 satisfiability solving and penalty-function
+  optimisation on the 25-block ECMPP instance. The penalty-function
+  approach assigns Plan~B a higher composite score than Plan~C and
+  converges toward it; Z3 identifies Plan~C as the unique admissible
+  plan with maximum NPV in 0.0619 seconds.}
+\label{tab:z3_comparison}
+\small
+\begin{tabular}{lccccc}
+\toprule
+ & Plan A & Plan B & Plan C \\
+\midrule
+NPV (\$M)                    & 47.1  & 38.5  & 31.1  \\
+Clauses satisfied (of 8)     & 3     & 7     & 8     \\
+$\Phi(x)=1$ (admissible)     & No    & No    & \textbf{Yes} \\
+\midrule
+Penalty score ($w=\$2$M/violation) & \$37.1M & \$36.5M & \$31.1M \\
+Penalty ranking              & 1st   & 2nd   & \textbf{3rd} \\
+\midrule
+Z3 identifies as admissible  & No    & No    & \textbf{Yes} \\
+Z3 solve time (seconds)      & \multicolumn{3}{c}{0.0619} \\
+\bottomrule
+\end{tabular}
+\end{table}
